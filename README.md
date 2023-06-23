@@ -11,7 +11,9 @@
 
 -Tadam evaluates how well it minimizes the loss function and uses this information to adjust the trust region dynamically.
 
-## We use Tadam to train the deep auto-encoder.  we do the same experiments using Adam, Amsgrad, Radam, and Nadam which have the O(N) space and time complexity as Tadam.
+## Experiment
+
+-We use Tadam to train the deep auto-encoder.  we do the same experiments using Adam, Amsgrad, Radam, and Nadam which have the O(N) space and time complexity as Tadam.
 
 ## L2 loss per epoch
 
