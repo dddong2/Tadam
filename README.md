@@ -10,3 +10,5 @@
 -Tadam employs an adaptive trust region scheme to reduce approximate errors and guarantee stability. 
 
 -Tadam evaluates how well it minimizes the loss function and uses this information to adjust the trust region dynamically.
+
+![L2 loss per epoch](/images/loss_mse_step.png)
