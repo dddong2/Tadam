@@ -1,7 +1,7 @@
-## TADAM(Trust region ADAptive Moment estimation)
+# TADAM(Trust region ADAptive Moment estimation)
 
 
-#ℹ️ Summary:
+##ℹ️ Summary:
 
 -Tadam approximates the loss up to the second order using the Fisher.
 
@@ -11,6 +11,6 @@
 
 -Tadam evaluates how well it minimizes the loss function and uses this information to adjust the trust region dynamically.
 
-# L2 loss per epoch
+## L2 loss per epoch
 
 ![L2 loss per epoch](/images/loss_mse_step.png)
