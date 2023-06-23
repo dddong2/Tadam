@@ -19,14 +19,6 @@
 
 ![L2 loss per epoch](/images/loss_mse_step.png)
 
-## L2 loss per time
-
-![L2 loss per time](/images/loss_mse_time.png)
-
 ## Huber loss per epoch
 
 ![huber loss per epoch](/images/loss_huber_step.png)
-
-## Huber loss per time
-
-![huber loss per time](/images/loss_huber_time.png)
