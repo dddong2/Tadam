@@ -19,8 +19,7 @@
 
 ![L2 loss per epoch](/images/loss_mse_step.png)
 
-- ### Tadam’s red curves stay below other curves, meaning Tadam converges better than
-the benchmarks at each epoch.
+- ### Tadam’s red curves stay below other curves, meaning Tadam converges better than the benchmarks at each epoch.
 
 ## Validation loss by varying γ 
 
