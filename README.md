@@ -13,8 +13,6 @@
 
 ## Experiment
 
-- ### We use Tadam to train the deep auto-encodermodel of MNIST, Fashion-MNIST, CIFAR-10, and celebA of 32 × 32 × 1 images after cropping and resizing with the batch size of 128. We train the model ten times and record the validation loss’s mean and standard deviations. we do the same experiments using Adam, Amsgrad, Radam, and Nadam which have the O(N) space and time complexity as Tadam.
-
-## Validation loss per epoch
+### Validation loss per epoch
 
 ![L2 loss per epoch](/images/loss_mse_step.png)
