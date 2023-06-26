@@ -38,7 +38,7 @@ AdaHessian has been developed as part of the following paper. We appreciate it i
 <br><br>
 
 ## Citation
-@article{tadam, <br>
+@article{tadam2023, <br>
   title={A scalable second order optimizer with trust region for neural networks}, <br>
   author={Donghee Yang, Junhyun Cho, Sungchul Lee} <br>
   journal={Neural Networks (Revision)}, <br>
