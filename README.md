@@ -11,6 +11,8 @@
 
 - ### Tadam evaluates how well it minimizes the loss function and uses this information to adjust the trust region dynamically.
 
+<br><br>
+
 ## Experiment
 -  We use our Tadam to train the deep auto-encoder. The training data sets are MNIST, Fashion-MNIST, CIFAR-10, and celebA. We train each auto-encoder ten times and record the loss's mean and standard deviations. Tadam exhibits a space and time complexity of $O(N)$, placing it on par with other widely used optimizers such as Adam, AMSGrad, Radam, and Nadam.
 
@@ -32,6 +34,8 @@
 
 Citation
 AdaHessian has been developed as part of the following paper. We appreciate it if you would please cite the following paper if you found the library useful for your work:
+
+<br><br>
 
 ## Citation
 @article{tadam, <br>
