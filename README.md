@@ -32,17 +32,3 @@
 
 - We use the hyper-parameter $\gamma \in (0, 0.25]$ to measure Tadam's training performance and update the $\delta_n$, which controls the trust region size. 
 - We evaluate the effect of $\gamma$, we use $\gamma$ values of $0.1$, $0.2$, and $0.25$ while maintaining a fixed learning rate $\eta$ of $0.001$, respectively. We observe that Tadam consistently maintains a relatively stable validation loss across the different $\gamma$ values, suggesting that Tadam's performance is relatively insensitive to the specific choices of $\gamma$.
-
-<br><br>
-""
-## Citation
-
-Tadam has been developed as part of the following paper. We appreciate it if you would please cite the following paper if you found the library useful for your work:
-
-@article{tadam2023, <br>
-  title={A scalable second order optimizer with trust region for neural networks}, <br>
-  author={Donghee Yang, Junhyun Cho, Sungchul Lee} <br>
-  journal={Neural Networks (Revision)}, <br>
-  year={2023} <br>
-}
-""
