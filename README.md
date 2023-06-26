@@ -22,7 +22,7 @@
 
 - Tadam converges faster than the benchmarks.
 
-
+<br>
 
 ### Validation loss by varying $\gamma$
 
