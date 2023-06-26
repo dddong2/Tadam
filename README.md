@@ -14,11 +14,15 @@
 ## Experiment
 - #### We use our Tadam to train the deep auto-encoder. The training data sets are MNIST, Fashion-MNIST, CIFAR-10, and celebA. We train each auto-encoder ten times and record the loss's mean and standard deviations. Tadam exhibits a space and time complexity of $O(N)$, placing it on par with other widely used optimizers such as Adam, AMSGrad, Radam, and Nadam.
 
+
+
 ### Validation loss per epoch
 
 ![L2 loss per epoch](/images/loss_mse_step.png)
 
 - #### Tadam converges faster than the benchmarks.
+
+
 
 ### Validation loss by varying $\gamma$
 
