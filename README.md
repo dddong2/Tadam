@@ -34,7 +34,7 @@
 - We evaluate the effect of $\gamma$, we use $\gamma$ values of $0.1$, $0.2$, and $0.25$ while maintaining a fixed learning rate $\eta$ of $0.001$, respectively. We observe that Tadam consistently maintains a relatively stable validation loss across the different $\gamma$ values, suggesting that Tadam's performance is relatively insensitive to the specific choices of $\gamma$.
 
 <br><br>
-
+""
 ## Citation
 
 Tadam has been developed as part of the following paper. We appreciate it if you would please cite the following paper if you found the library useful for your work:
@@ -45,3 +45,4 @@ Tadam has been developed as part of the following paper. We appreciate it if you
   journal={Neural Networks (Revision)}, <br>
   year={2023} <br>
 }
+""
