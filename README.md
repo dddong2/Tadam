@@ -34,9 +34,9 @@ Citation
 AdaHessian has been developed as part of the following paper. We appreciate it if you would please cite the following paper if you found the library useful for your work:
 
 ## Citation
-@article{tadam,
-  title={A scalable second order optimizer with trust region for neural networks},
-  author={Donghee Yang, Junhyun Cho, Sungchul Lee}
-  journal={},
-  year={}
+@article{tadam, <br>
+  title={A scalable second order optimizer with trust region for neural networks}, <br>
+  author={Donghee Yang, Junhyun Cho, Sungchul Lee} <br>
+  journal={}, <br>
+  year={} <br>
 }
