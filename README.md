@@ -32,3 +32,13 @@
 
 - We use the hyper-parameter $\gamma \in (0, 0.25]$ to measure Tadam's training performance and update the $\delta_n$, which controls the trust region size. 
 - We evaluate the impact of $\gamma$, we use $\gamma$ values of $0.1$, $0.2$, and $0.25$ while maintaining a fixed learning rate $\eta$ of $0.001$, respectively. We observe that Tadam consistently maintains a relatively stable validation loss across the different $\gamma$ values, suggesting that Tadam's performance is relatively insensitive to the specific choices of $\gamma$.
+
+# Q&A
+
+### Q. I don't quite understand the update equation for v_n in your Algorithm 1. Why is the expression MA(g_n - gbar_n-1)(g_n - gbar_n)? The gbar_n-1 term is a little surprising to me.
+
+A. Initially, we searched for references on how others handle the moving average of the second moment, and we found both MA(g_n - gbar_n)(g_n - gbar_n) and MA(g_n - gbar_n-1)(g_n - gbar_n). We experimented using both representations; the second performed better than the first, and we reported only the second in the paper. g_n is the current gradient, gbar_n is the moving average containing the current, and  gbar_n-1 is without the current. So, MA(g_n - gbar_n-1)(g_n - gbar_n) is a mixture of (backward) Nesterov momentum moving average and more traditional moving average.
+
+### Q. The "for n = 1 to N" loop in Algorithm 1, does n represent the n-th sample, n-th mini-batch, or n-th epoch? 
+
+A. One likely uses adam in the code when one trains a model. To use tadam instead of adam, just add t in front of adam, i.e., change adam to tadam. That is the original intention of our algorithm. One can interpret the for loop in Algorithm 1 in this respect. For our experiment setting, however, to quickly observe the difference between the adam and tadam, we update the model parameters for each mini-batch.
