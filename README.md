@@ -42,3 +42,6 @@ A. Initially, we searched for references on how others handle the moving average
 ### Q. The "for n = 1 to N" loop in Algorithm 1, does n represent the n-th sample, n-th mini-batch, or n-th epoch? 
 
 A. One likely uses adam in the code when one trains a model. To use tadam instead of adam, just add t in front of adam, i.e., change adam to tadam. That is the original intention of our algorithm. One can interpret the for loop in Algorithm 1 in this respect. For our experiment setting, however, to quickly observe the difference between the adam and tadam, we update the model parameters for each mini-batch.
+
+# Paper
+https://www.sciencedirect.com/science/article/abs/pii/S089360802300504X
