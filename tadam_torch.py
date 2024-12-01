@@ -183,7 +183,7 @@ if __name__ == "__main__":
     # Initialize the Tadam optimizer with betas tuple
     dt = 0
     # optimizer = optim.Adam(model.parameters(), lr=0.001)
-    optimizer = Tadam(model.parameters(), total_steps=100, lr=0.001, betas=(0.9, 0.999), gamma=0.001, eps=1e-8)
+    optimizer = Tadam(model.parameters(), total_steps=1000, lr=0.001, betas=(0.9, 0.999), gamma=0.25, eps=1e-8)
 
     # Define a simple loss function and data
     criterion = nn.MSELoss()
