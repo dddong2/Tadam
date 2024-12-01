@@ -198,9 +198,9 @@ if __name__ == "__main__":
         input_data = torch.randn(128, 16)
         output = model(input_data)  # Forward pass
         loss = criterion(output, input_data)  # Compute loss
+        optimizer.zero_grad()  # Zero the gradients
+        loss.backward()  # Backward pass (compute gradients)
         def closure():
-            optimizer.zero_grad()  # Zero the gradients
-            loss.backward()  # Backward pass (compute gradients)
             return loss
         loss = optimizer.step(closure)  # Update parameters using Tadam optimizer
         loss_lst.append(loss.item())
