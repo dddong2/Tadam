@@ -43,7 +43,7 @@ class Tadam(Optimizer):
         defaults = dict(lr=lr, betas=betas, gamma=gamma, eps=eps, total_steps=total_steps, weight_decay=weight_decay)
         super().__init__(params, defaults)
 
-    def step(self, loss, closure=None):
+    def step(self, closure=None):
         """
         Perform a single optimization step.
 
@@ -53,7 +53,7 @@ class Tadam(Optimizer):
         Returns:
             loss (float, optional): The loss value, if the closure is provided.
         """
-        # loss = None
+        loss = None
         if closure is not None:
             loss = closure()
 
@@ -135,8 +135,7 @@ class Tadam(Optimizer):
                 # Update the moving average of the loss function
                 state['loss_avg'] = beta1 * state['loss_avg'] + (1 - beta1) * loss.item()
                 state['ls_h'] = state['loss_avg'] / bias1
-            dt = state['dt']
-        return dt
+        return loss
 
 class SimpleModel(nn.Module):
     def __init__(self):
@@ -184,7 +183,7 @@ if __name__ == "__main__":
     # Initialize the Tadam optimizer with betas tuple
     dt = 0
     # optimizer = optim.Adam(model.parameters(), lr=0.001)
-    optimizer = Tadam(model.parameters(), total_steps=100, lr=0.001, betas=(0.9, 0.999), gamma=0.25, eps=1e-8)
+    optimizer = Tadam(model.parameters(), total_steps=100, lr=0.001, betas=(0.9, 0.999), gamma=0.001, eps=1e-8)
 
     # Define a simple loss function and data
     criterion = nn.MSELoss()
@@ -197,12 +196,13 @@ if __name__ == "__main__":
     val_lst = []
     for epoch in range(1000):  # Training for 100 epochs
         input_data = torch.randn(128, 16)
-        optimizer.zero_grad()  # Zero the gradients
-        output = model(input_data)  # Forward pass
-        loss = criterion(output, input_data)  # Compute loss
-        loss.backward()  # Backward pass (compute gradients)
-        # optimizer.step()  # Update parameters using Adam optimizer
-        dt = optimizer.step(loss)  # Update parameters using Tadam optimizer
+        def closure():
+            optimizer.zero_grad()  # Zero the gradients
+            output = model(input_data)  # Forward pass
+            loss = criterion(output, input_data)  # Compute loss
+            loss.backward()  # Backward pass (compute gradients)
+            return loss
+        loss = optimizer.step(closure)  # Update parameters using Tadam optimizer
         loss_lst.append(loss.item())
 
         model.eval()
@@ -212,7 +212,7 @@ if __name__ == "__main__":
             val_loss = nn.MSELoss()(output, val_data)
             val_lst.append(val_loss.item())
 
-        print(f"Epoch {epoch + 1}, Loss: {loss.item()}, v_loss{val_loss.item()} dt: {dt}")
+        print(f"Epoch {epoch + 1}, Loss: {loss.item()}, v_loss{val_loss.item()})
 
     plt.figure()
     plt.plot(loss_lst)
